@@ -1,0 +1,47 @@
+server:
+  port: 8229
+mybatis:
+  mapper-locations : classpath:/mybatis/mapper/*.xml
+  config-location: classpath:/mybatis/config/mybatis-config.xml
+spring:
+  #thymeleaf:
+    # 配置视图路径前缀
+    #prefix : classpath:/templates/
+    # 配置视图路径后缀
+    #suffix : .html
+    #mode : htmel
+    # 关闭缓存 修改视图 刷新浏览器就显示 开发阶段必须关闭缓存(=false)
+    #cache : false
+  #freemarker:
+    #request-context-attribute : req #req访问request
+    #suffix : .ftl #后缀名
+    #content-type : text/html
+    #enabled : true
+    #cache : false #缓存配置
+    #template-loader-path : classpath:/templates/ #模板加载路径 按需配置
+    #charset : UTF-8 #编码格式
+    #settings : 
+      #number_format : '0.##' #数字格式化，无小数点
+  datasource:
+     username : root
+     password : rootmysql
+     url : jdbc:mysql://127.0.0.1:3306/spring_boot?useUnicode=true&characterEncoding=utf8
+     driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect       
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  redis:
+    host : 127.0.0.1
+    port : 6379
+    password : marknumredispassword
+    lettuce:
+      pool:
+        #最大活跃连接数 默认8
+        max-active:  8
+        #最大空闲连接数 默认8
+        max-idle: 8
+        #最小空闲连接数 默认0
+        min-idle: 0
+  
